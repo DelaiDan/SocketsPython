@@ -15,7 +15,7 @@ server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 try:
     portao_socket.bind((portao_ip, portao_port))
-    portao_socket.listen(1)
+    portao_socket.listen()
     print('Portão pronto para receber conexôes')
 
     while True:
@@ -34,8 +34,10 @@ try:
                 print("Placa NÃO identificada!")
                 print("Portão Fechado")
 
-            time.sleep(5)
+            time.sleep(15)
             print("Portão Fechado")
+
+        break
 
 except ConnectionRefusedError:
     print("Não foi possível conectar ao servidor.")

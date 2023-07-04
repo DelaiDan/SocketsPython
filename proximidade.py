@@ -19,7 +19,8 @@ try:
         client_socket.sendall(data)
 
         modified_message = client_socket.recv(1024).decode()
-        print("String modificada:", modified_message)
+        print("Status:", modified_message)
+        break
 
 except ConnectionRefusedError:
     print("Não foi possível conectar ao servidor.")

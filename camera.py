@@ -15,7 +15,7 @@ server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 try:
     camera_socket.bind((camera_ip, camera_port))
-    camera_socket.listen(1)
+    camera_socket.listen()
     print('Camera pronta para receber conexôes')
 
     while True:
@@ -35,6 +35,8 @@ try:
 
             data = pickle.dumps(message)
             server_socket.sendall(data)
+
+        break
 
 except ConnectionRefusedError:
     print("Não foi possível conectar ao servidor.")

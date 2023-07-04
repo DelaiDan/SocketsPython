@@ -22,7 +22,7 @@ portao_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 try:
     server_socket.bind((server_ip, server_port))
-    server_socket.listen(2)
+    server_socket.listen(1)
     print('Servidor pronto para receber conexôes')
 
     while True:
@@ -66,8 +66,8 @@ try:
             data = pickle.dumps(data)
             portao_socket.sendall(data)
 
-
         client_socket.close()
+        break
 
 finally:
     server_socket.close()
