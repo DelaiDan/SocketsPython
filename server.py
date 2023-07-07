@@ -67,7 +67,6 @@ try:
             portao_socket.sendall(data)
 
         client_socket.close()
-        break
 
 finally:
     server_socket.close()

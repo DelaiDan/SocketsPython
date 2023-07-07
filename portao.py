@@ -37,7 +37,7 @@ try:
             time.sleep(15)
             print("Portão Fechado")
 
-        break
+            break
 
 except ConnectionRefusedError:
     print("Não foi possível conectar ao servidor.")
